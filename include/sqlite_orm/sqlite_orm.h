@@ -12280,6 +12280,10 @@ namespace sqlite_orm {
                 backup.step(-1);
             }
 
+            sqlite3* getSQLite3ConnectionHandle() {
+                return this->get_connection().get();
+            }
+
             void backup_from(const std::string& filename) {
                 auto backup = this->make_backup_from(filename);
                 backup.step(-1);
